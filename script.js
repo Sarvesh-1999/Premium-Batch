@@ -303,14 +303,119 @@
 // console.log(val6);
 
 //! ARRAY destructuring
-let arr1 = [10, 20, 30, 40, 50];
-let [a1, a2, a3, a4, a5] = arr1;
-console.log(a3, a5);
+// let arr1 = [10, 20, 30, 40, 50];
+// let [a1, a2, a3, a4, a5] = arr1;
+// console.log(a3, a5);
 
-let arr2 = [100, 200, [1000, 2000, [3000]]];
-let [b1, b2, [b3, b4, [b5]]] = arr2;
-console.log(b5, b3);
+// let arr2 = [100, 200, [1000, 2000, [3000]]];
+// let [b1, b2, [b3, b4, [b5]]] = arr2;
+// console.log(b5, b3);
 
-let arr3 = [100, 200, 300, 400, 500];
-let [, c1, , , c2] = arr3;
-console.log(c1, c2);
+// let arr3 = [100, 200, 300, 400, 500];
+// let [, c1, , , c2] = arr3;
+// console.log(c1, c2);
+
+//! ASYNCHRONOUS JS
+// 1) TIMER FUNCTIONS :- setInterval() and setTimeout()
+// 2) PROMISE
+
+// console.log("Start");
+
+// setTimeout(() => {
+//   console.log("Timeout 1");
+// }, 5000);
+
+// const intervalID = setInterval(() => {
+//   console.log("Interval 1");
+// }, 1000);
+
+// setTimeout(() => {
+//   clearInterval(intervalID);
+//   console.log("Interval Stopped");
+// }, 11000);
+
+// console.log("End");
+
+//! EVENT LOOP
+// console.log("Start");
+
+// setTimeout(function T1() {
+//   console.log("T1");
+// }, 6000);
+
+// console.log("hii");
+
+// setTimeout(function T2() {
+//   console.log("T2");
+// }, 2000);
+
+// console.log("Bye");
+
+// setTimeout(function T3() {
+//   console.log("T3");
+// }, 0);
+
+// console.log("end");
+
+/*
+ ! A Promise in JavaScript is a special object that acts as a placeholder for data that will be available in the future
+  
+ The 3 States of a Promise. A promise always exists in one of three states:
+  
+ Pending: The task is still running.
+ Fulfilled: The task completed successfully.
+ Rejected: The task failed due to an error.
+
+ ! How to Use It
+ then(): Runs your next steps if the promise is fulfilled.
+ catch(): Runs your error-handling code if the promise is rejected
+ */
+
+//! THEN AND CATCH
+// let p1 = fetch("https://jsonplaceholder.typicode.com/photos");
+// console.log(p1);
+
+// p1.then((response) => {
+//   let p2 = response.json();
+//   console.log(p2);
+
+//   p2.then((data) => {
+//     console.log(data);
+//   });
+// });
+
+// p1.catch((err) => {
+//   console.log(err);
+// });
+
+/*
+! ASYNC AND AWAIT
+async and await are JavaScript keywords that provide a cleaner, synchronous-looking syntax for working with Promises.
+
+They eliminate the need for verbose .then() and .catch() chains, making asynchronous code easier to read, write, and maintain
+ */
+
+// async function getPhotos() {
+//   try {
+//     let response = await fetch("https://jsonplaceholder.typicode.com/photos");
+//     let data = await response.json();
+//     console.log(data);
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
+// getPhotos();
+
+//! DOM - DOCUMENT OBJECT MODEL
+// DOM stands for DOCUMENT OBJECT MODEL which is visual representation of HTML Document in a tree-like structure
+
+//! THERE ARE 5 TYPES OF DOM SELECTORS
+// 1) document.getElementById() : returns an Element object representing the element whose id property matches the specified string.
+
+// 2) document.getElementsByClassName() : returns an array-like object of all child elements which have all of the given class name(s).
+
+// 3) document.getElementsByTagName() :  returns an HTMLCollection of elements with the given tag name.
+
+// 4) document.querySelector() : Returns the first element that is a descendant of node that matches selectors.
+
+// 5) document.querySelectorAll() : Returns all element descendants of node that match selectors.
