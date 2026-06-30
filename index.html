@@ -4,8 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+
+    <script src="./script.js" defer></script>
+
+    <!-- 
+    ! The primary difference between async and defer is when the script executes: 
+    
+    async scripts execute the exact moment they finish downloading (which pauses HTML parsing), while defer scripts wait to execute until the HTML document is fully parsed.
+    -->
   </head>
+
   <body>
-    <script src="./script.js"></script>
+    <h1 id="head1">Target me using ID 1</h1>
+
+    <h2 class="subHeading">Target me using class</h2>
+    <h2 class="subHeading">Target me using class</h2>
+    <h2 class="subHeading">Target me using class</h2>
+
+    <h3>Target me using Tagname</h3>
+    <h3>Target me using Tagname</h3>
+    <h3>Target me using Tagname</h3>
+
+
+    <section id="usersContainer">
+
+    </section>
+
   </body>
 </html>

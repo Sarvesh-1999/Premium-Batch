@@ -419,3 +419,93 @@ They eliminate the need for verbose .then() and .catch() chains, making asynchro
 // 4) document.querySelector() : Returns the first element that is a descendant of node that matches selectors.
 
 // 5) document.querySelectorAll() : Returns all element descendants of node that match selectors.
+
+//! EXAMPLES
+// const h1Tag = document.getElementById("head1");
+// console.log(h1Tag);
+// console.log(h1Tag.textContent);
+
+// const h2Tags = document.getElementsByClassName("subHeading");
+// console.log(h2Tags); // HTMLCollection(3) [h2.subHeading, h2.subHeading, h2.subHeading]
+// console.log(h2Tags[1].textContent);
+
+// //!Check Array is pure or not : Array.isArray()
+// console.log(Array.isArray(h2Tags)); //  false
+
+// const h3Tags = document.getElementsByTagName("h3");
+// console.log(h3Tags); // HTMLCollection(3) [h3, h3, h3]
+// console.log(h3Tags[2].textContent);
+
+// //! document.querySelector("#id , .class , tagname")
+// const element = document.querySelector("h3 , .subHeading , #head1");
+// console.log(element);
+
+// //! document.querySelectorAll("#id , .class , tagname")
+// const elements = document.querySelectorAll("h3,#head1");
+// console.log(elements); // NodeList(4) [h1#head1, h3, h3, h3]
+
+// //!Check Array is pure or not : Array.isArray()
+// console.log(Array.isArray(elements)); //  false
+
+//! HTMLCollection VS NodeList
+// HTMLCollection and Nodelist both are impure array, but there are 2 differences
+
+// 1) HTMLCollection is known as live collection whereas NodeList is known as static collection
+
+// 2) We cannot use any array methods in HTMLCollection , but we can use forEach() method in NodeList
+
+//! EXAMPLE
+// const collection = document.getElementsByTagName("h3");
+// const lists = document.querySelectorAll("h3");
+
+// console.log("collection --> ", collection.length); // 3
+// console.log("lists --> ", lists.length); // 3
+
+// for (let i = 0; i < 5; i++) {
+//   const h3 = document.createElement("h3");
+//   h3.textContent = "hello World";
+//   console.log(h3); // <h3>hello World</h3>
+//   document.body.appendChild(h3);
+// }
+
+// console.log("collection --> ", collection.length); // 8 <-- Live
+// console.log("lists --> ", lists.length); // 3 <-- Static
+
+//! DISPLAY API DATA ON UI
+
+const sectionTag = document.querySelector("#usersContainer")
+
+async function fetchUsers() {
+  try {
+    let resp = await fetch("https://jsonplaceholder.typicode.com/users");
+    let data = await resp.json();
+    displayUsers(data);
+  } catch (error) {
+    console.log(error);
+  }
+}
+fetchUsers();
+
+function displayUsers(users) {
+  console.log(users);// [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
+
+  users.map((userData) => {
+    let {id, name , username , address:{city}} = userData
+
+    const userCardDiv = document.createElement("div")
+    const nameEle = document.createElement("h2")
+    const usernameEle = document.createElement("h4")
+    const cityEle = document.createElement("h4")
+
+    nameEle.textContent = `Name : ${name}`
+    usernameEle.textContent = `Username : ${username}`
+    cityEle.textContent = `City : ${city}`
+
+    userCardDiv.className = "userCard"
+    
+    userCardDiv.append(nameEle,usernameEle,cityEle)
+
+    sectionTag.append(userCardDiv)
+  });
+}
+
