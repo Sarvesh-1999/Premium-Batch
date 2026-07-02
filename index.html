@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      .card{
+        background-color: gainsboro;
+      }
+    </style>
 
     <script src="./script.js" defer></script>
 
@@ -14,8 +19,8 @@
     -->
   </head>
 
-  <body>
-    <h1 id="head1">Target me using ID 1</h1>
+  <body onload="handleLoad()">
+    <!-- <h1 id="head1">Target me using ID 1</h1>
 
     <h2 class="subHeading">Target me using class</h2>
     <h2 class="subHeading">Target me using class</h2>
@@ -23,12 +28,23 @@
 
     <h3>Target me using Tagname</h3>
     <h3>Target me using Tagname</h3>
-    <h3>Target me using Tagname</h3>
+    <h3>Target me using Tagname</h3> -->
+
+    <!-- <section id="usersContainer">
+
+    </section> -->
 
 
-    <section id="usersContainer">
+    <button onclick="handleBtn()">
+      click once
+    </button>
 
-    </section>
+    <button id="btn">
+      click me
+    </button>
+
+
+
 
   </body>
 </html>
