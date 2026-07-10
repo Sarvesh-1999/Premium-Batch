@@ -1,15 +1,14 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Users</title>
-    <link rel="stylesheet" href="../styles/index.css">
-</head>
-<body>
-
+    <link rel="stylesheet" href="../styles/index.css" />
+    <script src="../scripts/Users.js" defer></script>
+  </head>
+  <body>
     <main class="main-container">
-
       <header class="navbar">
         <div>Crud-App</div>
 
@@ -20,13 +19,25 @@
         </nav>
       </header>
 
-
       <article class="wrapper">
-        <h1>Users Page</h1>
+        
+        <table class="table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Fullname</th>
+              <th>Email</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+
+          <tbody id="users-table-body">
+           
+          </tbody>
+        </table>
+
+
       </article>
-
-
     </main>
-    
-</body>
+  </body>
 </html>
