@@ -29,6 +29,12 @@
       "email": "hakim@gmail.com",
       "password": "123",
       "id": 5
+    },
+    {
+      "fullname": "Harsh",
+      "email": "harsh@gmail.com",
+      "password": "123",
+      "id": 6
     }
   ]
 }
