@@ -1,7 +1,7 @@
 {
   "users": [
     {
-      "fullname": "Nishant",
+      "fullname": "Nishant Tanwar",
       "email": "nishant@gmail.com",
       "password": "123",
       "id": 1
@@ -17,12 +17,6 @@
       "email": "yash@gmail.com",
       "password": "123",
       "id": 3
-    },
-    {
-      "fullname": "sahil",
-      "email": "sahil@gmail.com",
-      "password": "123",
-      "id": 4
     },
     {
       "fullname": "Hakim",

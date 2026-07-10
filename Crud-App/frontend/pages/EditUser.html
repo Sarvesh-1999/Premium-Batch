@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Update</title>
+    <link rel="stylesheet" href="../styles/index.css" />
+    <script src="../scripts/EditUser.js" defer></script>
+
+  </head>
+  <body>
+    <main class="main-container">
+      <header class="navbar">
+        <div>Crud-App</div>
+
+        <nav>
+          <a href="../index.html">Home</a>
+          <a href="./CreateUser.html">Create</a>
+          <a href="./Users.html">Users</a>
+        </nav>
+      </header>
+
+      <article class="wrapper">
+        <form class="form" id="update-form">
+          <div class="form-group">
+            <label for="fullname">Fullname</label>
+            <input type="text" name="fullname" id="fullname" />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" />
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" />
+          </div>
+
+          <div class="btn-group">
+            <button type="submit">Update</button>
+          </div>
+        </form>
+      </article>
+    </main>
+  </body>
+</html>

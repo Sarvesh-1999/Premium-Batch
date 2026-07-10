@@ -28,13 +28,30 @@ function displayUsers(users = []) {
           <td>${fullname}</td>
           <td>${email}</td>
           <td>
-            <button>Edit</button>
-            <button>Delete</button>
+            <button onclick='editUser(${id})'>Edit</button>
+            <button onclick='deleteUser(${id})'>Delete</button>
           </td>
       `;
       tableBody.append(tr);
     });
   }
+}
+
+async function deleteUser(id) {
+  try {
+    await fetch(`http://localhost:5000/users/${id}`, {
+      method: "DELETE",
+    });
+    alert("user deleted");
+  } catch (error) {
+    console.log(error);
+    alert("unable to delete");
+  }
+}
+
+function editUser(id) {
+  console.log("edit id", id);
+  window.location.href = `EditUser.html?id=${id}`
 }
 
 window.addEventListener("DOMContentLoaded", () => {
