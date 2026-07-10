@@ -3,6 +3,8 @@ const fullNameInput = document.querySelector("#fullname");
 const emailInput = document.querySelector("#email");
 const passwordInput = document.querySelector("#password");
 
+
+
 async function getEditUser() {
   const params = new URLSearchParams(window.location.search);
   const id = params.get("id");
