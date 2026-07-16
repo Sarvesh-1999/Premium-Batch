@@ -4,6 +4,7 @@ import StatesInFBC from "./all-topics/02_states/StatesInFBC";
 import Task1 from "./tasks/Task1";
 import Task2 from "./tasks/Task2";
 import PropsParent from "./all-topics/03_props/PropsParent";
+import DrillingParent from "./all-topics/04_props-drilling/DrillingParent";
 
 const App = () => {
   return (
@@ -13,7 +14,8 @@ const App = () => {
       {/* <StatesInFBC /> */}
       {/* <Task1 /> */}
       {/* <Task2 /> */}
-      <PropsParent />
+      {/* <PropsParent /> */}
+      <DrillingParent />
     </>
   );
 };
