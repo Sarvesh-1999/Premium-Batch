@@ -5,6 +5,9 @@ import Task1 from "./tasks/Task1";
 import Task2 from "./tasks/Task2";
 import PropsParent from "./all-topics/03_props/PropsParent";
 import DrillingParent from "./all-topics/04_props-drilling/DrillingParent";
+import Home from "./all-topics/05_context/Home";
+import Context from "./all-topics/05_context/Context";
+import ControlledForms1 from "./all-topics/06_forms/ControlledForms1";
 
 const App = () => {
   return (
@@ -15,7 +18,12 @@ const App = () => {
       {/* <Task1 /> */}
       {/* <Task2 /> */}
       {/* <PropsParent /> */}
-      <DrillingParent />
+      {/* <DrillingParent /> */}
+      {/* <Context>
+        <Home />
+      </Context> */}
+
+      <ControlledForms1 />
     </>
   );
 };
