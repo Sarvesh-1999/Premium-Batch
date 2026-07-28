@@ -1,0 +1,21 @@
+{
+  "users": [
+    {
+      "firstname": "John",
+      "lastname": "Doe",
+      "dob": "2026-07-20",
+      "country": "india",
+      "gender": "male",
+      "id": "1kKpfnmixIY"
+    },
+    {
+      "firstname": "Jane",
+      "lastname": "Doe",
+      "dob": "2026-07-20",
+      "country": "russia",
+      "gender": "female",
+      "id": "KNGqbxBWZq0"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

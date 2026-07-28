@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Learn Debouncing</h1>
+
+    <script>
+      function debouce(fn, delay) {
+        let id;
+        return function (x) {
+          clearTimeout(id);
+          id = setTimeout(() => {
+            fn(x);
+          }, delay);
+        };
+      }
+
+      function searchBarFunc(query) {
+        console.log(query);
+      }
+
+      let val = debouce(searchBarFunc, 2000);
+
+      val("i");
+      val("ip");
+      val("iph");
+      val("ipho");
+      val("iphon");
+      val("iphone");
+    </script>
+  </body>
+</html>
