@@ -4,6 +4,7 @@ import { Virtuoso } from "react-virtuoso";
 
 const VirtualizationExample = () => {
   const [todos, setTodos] = useState([]);
+  console.log(todos);
 
   useEffect(() => {
     async function getTodos() {
@@ -23,22 +24,13 @@ const VirtualizationExample = () => {
       <h1>VirtualizationExample</h1>
 
       <section
-        style={{
-          height: "500px",
-          width: "500px",
-          border: "2px solid black",
-          overflowY: "scroll",
-        }}
+        style={{ height: "500px", width: "500px", border: "1px solid black" }}
       >
         <Virtuoso
-          style={{ height: "100%" }}
-          totalCount={todos.length}
+          style={{ backgroundColor: "lightblue" }}
           data={todos}
-          itemContent={(index, ele) => (
-            <div key={ele.id} style={{ padding: "20px" }}>
-              {ele.todo}
-            </div>
-          )}
+          totalCount={todos.length}
+          itemContent={(_, ele) => <li style={{padding:"20px"}}>{ele.todo}</li>}
         />
       </section>
     </div>
