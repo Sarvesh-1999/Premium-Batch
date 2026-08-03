@@ -4,6 +4,7 @@ import VirtualizationExample from "./all-topics/14_Virtualization/Virtualization
 import Reducer from "./all-topics/15_Reducer/Reducer";
 import Clock1 from "./all-topics/16_Ref/Clock1";
 import Clock2 from "./all-topics/16_Ref/Clock2";
+import ReduxExample from "./all-topics/17_Redux-Toolkit/ReduxExample";
 
 const App = () => {
   return (
@@ -13,7 +14,8 @@ const App = () => {
       {/* <VirtualizationExample /> */}
       {/* <Reducer /> */}
       {/* <Clock1 /> */}
-      <Clock2 />
+      {/* <Clock2 /> */}
+      <ReduxExample />
     </>
   );
 };
