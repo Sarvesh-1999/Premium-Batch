@@ -49,5 +49,4 @@ The useMemo hook is a built-in React tool that caches (memoizes) the result of a
 
 ! useCallback
 useCallback is a React Hook that caches (memoizes) a function definition between component re-renders. By default, React recreates every function inside a component on every single render. Wrapping a function in useCallback ensures that React retains the same function instance in memory, unless its underlying dependencies change.
-
 */
