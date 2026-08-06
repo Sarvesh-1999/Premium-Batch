@@ -4,10 +4,28 @@
       "firstname": "John",
       "lastname": "Doe",
       "email": "john@gmail.com",
-      "password": "1234567",
-      "doj": "2026-08-05",
+      "password": "123",
+      "doj": "2026-08-03",
       "gender": "male",
       "id": 1
+    },
+    {
+      "firstname": "Henry",
+      "lastname": "Cavillll",
+      "email": "henry@gmail.com",
+      "password": "123",
+      "doj": "2026-08-19",
+      "gender": "male",
+      "id": 2
+    },
+    {
+      "firstname": "demo",
+      "lastname": "test1",
+      "email": "dt@gmail.com",
+      "password": "123",
+      "doj": "2026-08-06",
+      "gender": "female",
+      "id": 3
     }
   ]
 }

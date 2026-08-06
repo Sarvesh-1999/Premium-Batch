@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { AxiosInstance } from "../services/axiosIntance";
+import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const Create = () => {
   const [formData, setFormData] = useState({
@@ -16,11 +18,14 @@ const Create = () => {
     setFormData({ ...formData, [name]: value });
   };
 
+  const navigate = useNavigate()
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       await AxiosInstance.post("/users", formData);
-      alert("User Created");
+      toast.success("User Created");
+      
       setFormData({
         firstname: "",
         lastname: "",
@@ -29,102 +34,171 @@ const Create = () => {
         doj: "",
         gender: "",
       });
+
+      navigate("/all-users")
+
     } catch (error) {
-      alert("unable to create user");
+      toast.error("unable to create user");
     }
   };
 
   return (
-    <div className="p-10">
-      <h1 className="text-2xl font-bold pb-5">Create a User</h1>
+    <div className="min-h-screen  bg-gradient-to-br from-blue-100 via-white to-indigo-100 flex items-center justify-center p-6">
+      <div className="w-full max-w-2xl bg-white rounded-2xl shadow-2xl p-8 mt-15">
+        <h1 className="text-3xl font-bold text-center text-indigo-600 mb-8">
+          Create User
+        </h1>
 
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="firstname">Firstname</label>
-        <input
-          value={formData.firstname}
-          onChange={handleChange}
-          className="border"
-          type="text"
-          name="firstname"
-          id="firstname"
-        />
+        <form onSubmit={handleSubmit} className="space-y-3">
+          {/* First & Last Name */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+            <div>
+              <label
+                htmlFor="firstname"
+                className="block text-sm font-medium mb-2 text-gray-700"
+              >
+                First Name
+              </label>
+              <input
+                value={formData.firstname}
+                onChange={handleChange}
+                type="text"
+                name="firstname"
+                id="firstname"
+                placeholder="Enter first name"
+                className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              />
+            </div>
 
-        <label htmlFor="lastname">Lastname</label>
-        <input
-          value={formData.lastname}
-          onChange={handleChange}
-          className="border"
-          type="text"
-          name="lastname"
-          id="lastname"
-        />
+            <div>
+              <label
+                htmlFor="lastname"
+                className="block text-sm font-medium mb-2 text-gray-700"
+              >
+                Last Name
+              </label>
+              <input
+                value={formData.lastname}
+                onChange={handleChange}
+                type="text"
+                name="lastname"
+                id="lastname"
+                placeholder="Enter last name"
+                className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              />
+            </div>
+          </div>
 
-        <label htmlFor="email">Email</label>
-        <input
-          value={formData.email}
-          onChange={handleChange}
-          className="border"
-          type="email"
-          name="email"
-          id="email"
-        />
+          {/* Email */}
+          <div>
+            <label
+              htmlFor="email"
+              className="block text-sm font-medium mb-2 text-gray-700"
+            >
+              Email
+            </label>
+            <input
+              value={formData.email}
+              onChange={handleChange}
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Enter email"
+              className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            />
+          </div>
 
-        <label htmlFor="password">Password</label>
-        <input
-          value={formData.password}
-          onChange={handleChange}
-          className="border"
-          type="password"
-          name="password"
-          id="password"
-        />
+          {/* Password */}
+          <div>
+            <label
+              htmlFor="password"
+              className="block text-sm font-medium mb-2 text-gray-700"
+            >
+              Password
+            </label>
+            <input
+              value={formData.password}
+              onChange={handleChange}
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Enter password"
+              className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            />
+          </div>
 
-        <label htmlFor="gender">Gender</label>
-        <label htmlFor="male">male</label>
-        <input
-          onChange={handleChange}
-          className="border"
-          type="radio"
-          name="gender"
-          id="male"
-          checked={formData.gender === "male" ? true : false}
-          value={"male"}
-        />
+          {/* Gender */}
+          <div>
+            <label className="block text-sm font-medium mb-3 text-gray-700">
+              Gender
+            </label>
 
-        <label htmlFor="female">female</label>
-        <input
-          onChange={handleChange}
-          className="border"
-          type="radio"
-          name="gender"
-          checked={formData.gender === "female" ? true : false}
-          id="female"
-          value={"female"}
-        />
+            <div className="flex gap-6">
+              <label className="flex items-center gap-2 cursor-pointer">
+                <input
+                  type="radio"
+                  name="gender"
+                  value="male"
+                  checked={formData.gender === "male"}
+                  onChange={handleChange}
+                  className="accent-indigo-600"
+                />
+                <span>Male</span>
+              </label>
 
-        <label htmlFor="others">others</label>
-        <input
-          onChange={handleChange}
-          className="border"
-          type="radio"
-          name="gender"
-          checked={formData.gender === "others" ? true : false}
-          id="others"
-          value={"others"}
-        />
+              <label className="flex items-center gap-2 cursor-pointer">
+                <input
+                  type="radio"
+                  name="gender"
+                  value="female"
+                  checked={formData.gender === "female"}
+                  onChange={handleChange}
+                  className="accent-pink-500"
+                />
+                <span>Female</span>
+              </label>
 
-        <label htmlFor="doj">Date of joining</label>
-        <input
-          className="border"
-          type="date"
-          name="doj"
-          id="doj"
-          value={formData.doj}
-          onChange={handleChange}
-        />
+              <label className="flex items-center gap-2 cursor-pointer">
+                <input
+                  type="radio"
+                  name="gender"
+                  value="others"
+                  checked={formData.gender === "others"}
+                  onChange={handleChange}
+                  className="accent-green-500"
+                />
+                <span>Others</span>
+              </label>
+            </div>
+          </div>
 
-        <button>Create</button>
-      </form>
+          {/* Date */}
+          <div>
+            <label
+              htmlFor="doj"
+              className="block text-sm font-medium mb-2 text-gray-700"
+            >
+              Date of Joining
+            </label>
+            <input
+              value={formData.doj}
+              onChange={handleChange}
+              type="date"
+              name="doj"
+              id="doj"
+              className="w-full rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            />
+          </div>
+
+          {/* Button */}
+          <button
+            type="submit"
+            className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 rounded-lg transition duration-300 shadow-md hover:shadow-xl"
+          >
+            Create User
+          </button>
+        </form>
+      </div>
     </div>
   );
 };
