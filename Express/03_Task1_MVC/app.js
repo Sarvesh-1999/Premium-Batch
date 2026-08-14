@@ -5,7 +5,7 @@ const app = express();
 const PORT = 9000;
 
 //! ROUTES
-app.use(userRoutes);
+app.use(userRoutes)
 
 app.listen(PORT, (err) => {
   if (err) {
