@@ -72,6 +72,23 @@ app.delete("/delete-book/:id", (req, res) => {
   });
 });
 
+//---> PUT /edit-book/:id
+app.put("/edit-book/:id", (req, res) => {
+  const bookId = parseInt(req.params.id);
+  const { title } = req.body; // {title : "updated Value"}
+
+  // console.log("ID is", bookId);
+  // console.log("Updated Value is", title);
+
+  let bookToBeEdited = Books.find((ele) => ele.id === bookId);
+  bookToBeEdited.title = title;
+
+  res.status(200).json({
+    message: "Book updated successfully",
+    book: bookToBeEdited,
+  });
+});
+
 app.listen(PORT, (err) => {
   if (err) {
     console.log(err);
