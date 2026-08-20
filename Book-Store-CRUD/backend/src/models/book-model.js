@@ -14,7 +14,7 @@ const BookSchema = new mongoose.Schema(
       trim: true,
     },
     year: {
-      type: Date,
+      type: Number,
       required: [true, "Please provide book's published date"],
       min: [2000, "Publication year cannot be less than 2000"],
       max: [
@@ -26,4 +26,6 @@ const BookSchema = new mongoose.Schema(
   { timestamps: true },
 );
 
-export default mongoose.model("Book", BookSchema);
+const Book = mongoose.model("Book", BookSchema);
+
+export default Book
